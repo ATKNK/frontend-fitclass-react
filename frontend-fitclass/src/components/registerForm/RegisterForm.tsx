@@ -11,7 +11,46 @@ export default function RegisterForm() {
     const [passwordConfirmation, setPasswordConfirmation] = useState("")
     const [error, setError] = useState("")
 
-    
+    const handleRegister = async () => {
+        if (!name || !birthDate|| !cpf || !email || !password || !passwordConfirmation) {
+            alert('Preencha todos os campos.');   
+        return;}
+
+        if (password !== passwordConfirmation) {
+            alert('As senhas não coincidem.');
+            return; 
+        }
+
+        try {
+            setError("")
+            const data = await fetch("/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name,
+                    birthDate,
+                    cpf,
+                    email,
+                    password
+                })
+            });
+
+            if (!data.ok) {
+                const errorData = await data.json();
+                throw new Error(errorData.message || "Erro ao registrar usuário");
+            }
+        // registro realizado com sucesso
+        window.location.href = "/login";
+        } catch (error: any) {
+            if(error instanceof Error){
+                setError(error.message)
+            }else {
+                setError("Erro desconhecido!")
+            }
+        }
+    }
 
     return (
         <form className="registerForm">
@@ -44,7 +83,7 @@ export default function RegisterForm() {
                 placeholder="000.000.000-00"
                 value={cpf}
                 onChange={(e) => setCpf(e.target.value)}
-                id="birthDate"
+                id="cpf"
                 />
             </div>
 
@@ -82,7 +121,7 @@ export default function RegisterForm() {
             </div>
 
             <div className="buttonContainer">
-                <Button onClick={handleLogin} title="Entrar"/>
+                <Button onClick={handleRegister} title="Cadastrar"/>
             </div>
 
             {error && <div className="error">{error}</div>}
