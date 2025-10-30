@@ -1,12 +1,11 @@
 .main{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 100dvh;
-  padding-bottom: 13vh; /* espaço para a navbar fixa/baixa */
+  height: 100vh;
   box-sizing: border-box;
-  justify-content: flex-start;
 }
 
 .navbar{
