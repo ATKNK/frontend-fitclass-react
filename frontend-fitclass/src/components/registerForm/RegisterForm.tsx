@@ -1,6 +1,8 @@
+import "./RegisterForm.css";  
 import Input from "../ui/input/Input";
 import Button from "../ui/button/Button";
 import { useState } from "react";
+import { apiFetch } from "../../utils/api/api";
 
 export default function RegisterForm() {
     const [name, setName] = useState("")
@@ -23,26 +25,19 @@ export default function RegisterForm() {
 
         try {
             setError("")
-            const data = await fetch("/register", {
+            await apiFetch("/register", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
                 body: JSON.stringify({
                     name,
                     birthDate,
-                    cpf,
+                    cpf,    
                     email,
                     password
                 })
             });
 
-            if (!data.ok) {
-                const errorData = await data.json();
-                throw new Error(errorData.message || "Erro ao registrar usuário");
-            }
-        // registro realizado com sucesso
-        window.location.href = "/login";
+            //se o registro for realizado com sucesso, manda pra página de login
+            window.location.href = "/login";
         } catch (error: any) {
             if(error instanceof Error){
                 setError(error.message)
@@ -57,66 +52,66 @@ export default function RegisterForm() {
             <div className="inputContainer">
                 <label htmlFor="name" className="label">Nome: </label>
                 <Input
-                type="text"
-                placeholder="Seu Nome"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                id="name"
+                    type="text"
+                    placeholder="Seu Nome"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    id="name"
                 />
             </div>
 
             <div className="inputContainer">
                 <label htmlFor="birthDate" className="label">Data de Nascimento: </label>
                 <Input
-                type="text"
-                placeholder="DD/MM/AAAA"
-                value={birthDate}
-                onChange={(e) => setBirthDate(e.target.value)}
-                id="birthDate"
+                    type="text" 
+                    placeholder="DD/MM/AAAA"
+                    value={birthDate}
+                    onChange={(e) => setBirthDate(e.target.value)}
+                    id="birthDate"
                 />
             </div>
 
             <div className="inputContainer">
                 <label htmlFor="cpf" className="label">Cpf: </label>
                 <Input
-                type="text"
-                placeholder="000.000.000-00"
-                value={cpf}
-                onChange={(e) => setCpf(e.target.value)}
-                id="cpf"
+                    type="text"
+                    placeholder="000.000.000-00"
+                    value={cpf}
+                    onChange={(e) => setCpf(e.target.value)}
+                    id="cpf"
                 />
             </div>
 
             <div className="inputContainer">
                 <label htmlFor="email" className="label">Email: </label>
                 <Input
-                type="email"
-                placeholder="seu@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                id="email"
+                    type="email"
+                    placeholder="seu@email.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    id="email"
                 />
             </div>
 
             <div className="inputContainer">
                 <label htmlFor="password" className="label">Senha: </label>
                 <Input
-                type="password"
-                placeholder=""
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                id="password"
+                    type="password"
+                    placeholder=""
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    id="password"
                 />
             </div>
 
             <div className="inputContainer">
                 <label htmlFor="passwordConfirmation" className="label">Confirme sua senha: </label>
                 <Input
-                type="password"
-                placeholder="Confirme sua senha:"
-                value={passwordConfirmation}
-                onChange={(e) => setPasswordConfirmation(e.target.value)}
-                id="passwordConfirmation"
+                    type="password"
+                    placeholder="Confirme sua senha:"
+                    value={passwordConfirmation}
+                    onChange={(e) => setPasswordConfirmation(e.target.value)}
+                    id="passwordConfirmation"
                 />
             </div>
 

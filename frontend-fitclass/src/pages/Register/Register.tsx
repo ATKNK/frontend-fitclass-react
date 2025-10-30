@@ -1,7 +1,8 @@
 import imgBackground from "../../assets/img/runningImage.png";
 import RegisterForm from "../../components/registerForm/RegisterForm.tsx";
+import "./register.css";
 
-export default function Register(){
+export default function Register() {
     return (
         <div className="register">
             <div className="image">
@@ -16,6 +17,7 @@ export default function Register(){
             <div className="register-form-container">
                 <RegisterForm />
             </div>
+
         </div>
     )
 }
