@@ -1,11 +1,11 @@
 .login {
   position: relative;
-  min-height: 100vh;
+  min-height: 100dvh;
   width: 100%;
   height: auto;
   background-color: #ebebeb;
   box-shadow: 0px 4px 250px 0px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 .image {
@@ -28,7 +28,7 @@
     max-width: none;
 }
 
-.title {
+.header-title{
     position: absolute;
     left: 50%;
     top: 70px;

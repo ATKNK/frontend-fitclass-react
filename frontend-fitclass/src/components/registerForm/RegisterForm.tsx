@@ -1,4 +1,4 @@
-import "./RegisterForm.css";  
+import "./registerForm.css";  
 import Input from "../ui/input/Input";
 import Button from "../ui/button/Button";
 import { useState } from "react";
@@ -97,7 +97,7 @@ export default function RegisterForm() {
                 <label htmlFor="password" className="label">Senha: </label>
                 <Input
                     type="password"
-                    placeholder=""
+                    placeholder="Digite sua senha"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     id="password"

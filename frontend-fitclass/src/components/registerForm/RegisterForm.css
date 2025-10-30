@@ -2,10 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    width: 100%;
-    max-width: 36rem;
-    padding: 2rem;
-    box-sizing: border-box;
+    width:36rem;
 }
 
 .inputContainer{
@@ -25,26 +22,4 @@
 .buttonContainer{
     margin-top: 0.4rem;
     width: 100%;
-}
-
-@media (max-width: 768px) {
-    .registerForm {
-        gap: 2rem;
-        padding: 1rem;
-    }
-    
-    .label {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .registerForm {
-        gap: 1.5rem;
-        padding: 0.5rem;
-    }
-    
-    .label {
-        font-size: 0.85rem;
-    }
 }

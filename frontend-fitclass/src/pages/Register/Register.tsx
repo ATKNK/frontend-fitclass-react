@@ -9,7 +9,7 @@ export default function Register() {
                 <img src={imgBackground} alt="" />
             </div>
 
-            <h1 className="title">
+            <h1 className="header-title">
                 <span>Treine no seu ritmo, </span>
                 <span className="title-span">sem filas e sem lotação</span>
             </h1>

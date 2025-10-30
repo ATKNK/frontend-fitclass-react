@@ -5,7 +5,7 @@
     height: auto;
     background-color: #ebebeb;
     box-shadow: 0px 4px 250px 0px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
+    overflow-y: auto;
   }
   
   .image {
@@ -28,7 +28,7 @@
       max-width: none;
   }
   
-  .title {
+  .header-title{
       position: absolute;
       left: 50%;
       top: 70px;
@@ -48,3 +48,11 @@
       color: #c6fc03;
   }
   
+  .register-form-container {
+      position: absolute;
+      left: 50%;
+      top: 280px;
+      transform: translateX(-50%);
+  }
+  
+ 
