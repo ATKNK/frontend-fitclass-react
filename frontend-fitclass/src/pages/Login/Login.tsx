@@ -23,7 +23,7 @@ export default function Login() {
           Esqueceu sua senha?
         </p>
 
-        <p className="register">
+        <p className="registerSection">
           <span>Não tem conta? </span>
           <span className="register-link">Cadastre-se</span>
         </p>

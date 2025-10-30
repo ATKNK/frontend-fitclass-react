@@ -8,7 +8,6 @@
     box-sizing: border-box;
 }
 
-/*
 .inputContainer{
     display: flex;
     flex-direction: column;
@@ -48,4 +47,4 @@
     .label {
         font-size: 0.85rem;
     }
-} */
+}
