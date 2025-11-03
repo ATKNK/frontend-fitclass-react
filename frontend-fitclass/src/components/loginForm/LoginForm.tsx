@@ -2,10 +2,12 @@ import { useState } from "react";
 import { saveToken } from "../../utils/api/auth";
 import { apiFetch } from "../../utils/api/api";
 import Input from "../ui/input/Input";
+import Button from "../ui/button/Button";
+import "./LoginForm.css";
 
 export default function LoginForm() {
-  const [nome, setNome] = useState("");
-  const [senha, setSenha] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const handleLogin = async () => {
@@ -13,7 +15,7 @@ export default function LoginForm() {
       setError("");
       const data = await apiFetch<{ token: string }>("/login", {
         method: "POST",
-        body: JSON.stringify({ nome, senha }),
+        body: JSON.stringify({ email, password }),
       });
 
       saveToken(data.token);
@@ -27,25 +29,36 @@ export default function LoginForm() {
     }
   };
 
-  return(
-    <div className="login-form">
-      <h2>Login</h2>
+  return (
+    <form className="loginForm">
+      <div className="inputContainer">
+        <label htmlFor="email" className="label">Email: </label>
+        <Input
+          type="email"
+          placeholder="seu@email.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          id="email"
+        />
+      </div>
 
-      <Input
-        type="text"
-        value={nome}
-        onChange={(e) => setNome(e.target.value)}
-      />
+      <div className="inputContainer">
+        <label htmlFor="password" className="label">Senha: </label>
+        <Input
+          type="password"
+          placeholder="Digite sua senha"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          id="password"
+        />
+      </div>
 
-      <Input
-        type="password"
-        value={senha}
-        onChange={(e) => setSenha(e.target.value)}
-      />
-
-      <button onClick={handleLogin}>LOGIN</button>
+      <div className="buttonContainer">
+        <Button onClick={handleLogin} title="Entrar"/>
+      </div>
 
       {error && <div className="error">{error}</div>}
-    </div>
-  )
+
+    </form>
+  );
 }

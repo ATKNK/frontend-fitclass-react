@@ -1,0 +1,28 @@
+.input {
+  background-color: rgba(172, 172, 172, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: white;
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  height: 47px;
+  padding: 0 24px;
+  width: 100%;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color: #dbd8d8;
+}
+
+.input:focus {
+  background-color: rgba(172, 172, 172, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.input:hover {
+  background-color: rgba(172, 172, 172, 0.35);
+}

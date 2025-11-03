@@ -1,5 +1,4 @@
-import Button from "../../components/button/Button";
-import FormInput from "../../components/formInput/FormInput";
+import Button from "../../components/ui/button/Button";
 import "./Profile.css";
 
 function Profile() {

@@ -1,4 +1,3 @@
-import React from "react";
 import './NavbarIcon.css';
 
 function NavbarIcon({pathTo, imgSrc, label}:{pathTo: string, imgSrc: string, label:string}) {
