@@ -9,7 +9,7 @@ export default function Login() {
         <img src={imgBackground} alt="" />
       </div>
 
-       <h1 className="title">
+      <h1 className="header-title">
         <span>Treine no seu ritmo, </span>
         <span className="title-span">sem filas e sem lotação</span>
       </h1>
@@ -19,17 +19,13 @@ export default function Login() {
       </div>
 
       <div className="options">
-        <p className="forget-password">
-          Esqueceu sua senha?
-        </p>
+        <p className="forget-password">Esqueceu sua senha?</p>
 
         <p className="registerSection">
           <span>Não tem conta? </span>
           <span className="register-link">Cadastre-se</span>
         </p>
       </div>
-
     </div>
-  )
+  );
 }
-
