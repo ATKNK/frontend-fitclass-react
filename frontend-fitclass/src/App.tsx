@@ -5,6 +5,7 @@ import Home from './pages/Academias/Academias';
 import Register from './pages/Register/Register';
 import Profile from './pages/profile/Profile';
 import Navbar from './components/navbar/Navbar'
+import Reservations from './pages/Reservations/Reservations';
 
 function AppContent() {
 
@@ -24,6 +25,7 @@ return (
         <Route path='/profile' element={<Profile/>}/>
         <Route path="/home" element={<Home />}/>
         <Route path="/register" element={<Register />}/>
+        <Route path="/reservations" element={<Reservations/>}/>
       </Routes>
     </div>
   );
