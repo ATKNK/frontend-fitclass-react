@@ -1,0 +1,45 @@
+.cardMain {
+    width: 40vh;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, #5C5454, #262626);
+    border-radius: 2vh;
+    padding: 5%;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+.cardTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.cardTitleName {
+    font-weight: bolder;
+    color: white;
+    font-size: large;
+}
+
+.cardTitleTimeRelated {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    font-size: small;
+}
+
+.cardTitleTime {
+    font-weight: bold;
+    font-size: larger;
+    color: #c6fc03;
+}
+
+.cardTitleDuration {
+    font-size: small;
+    color: gainsboro;
+}
+
+.cardInfo{
+    color: gainsboro;
+}
