@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { isAuthenticated, removeToken } from "../utils/api/auth";
+import { isAuthenticated, removeToken } from "../../utils/api/auth";
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {

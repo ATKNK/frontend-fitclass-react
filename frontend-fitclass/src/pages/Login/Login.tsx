@@ -23,7 +23,7 @@ export default function Login() {
 
         <p className="registerSection">
           <span>Não tem conta? </span>
-          <span className="register-link">Cadastre-se</span>
+          <a className="register-link" href="/register">Cadastre-se</a>
         </p>
       </div>
     </div>
