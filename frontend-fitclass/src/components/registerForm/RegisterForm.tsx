@@ -38,7 +38,7 @@ export default function RegisterForm() {
 
             //se o registro for realizado com sucesso, manda pra página de login
             window.location.href = "/login";
-        } catch (error: any) {
+        } catch (error: unknown) {
             if(error instanceof Error){
                 setError(error.message)
             }else {
