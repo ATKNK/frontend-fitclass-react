@@ -13,7 +13,7 @@ export default function LoginForm() {
   const handleLogin = async () => {
     try {
       setError("");
-      const data = await apiFetch<{ token: string }>("/login", {
+      const data = await apiFetch<{ token: string }>("/auth/login", {
         method: "POST",
         body: JSON.stringify({ email, password }),
       });
