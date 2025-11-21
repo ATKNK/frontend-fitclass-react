@@ -1,4 +1,4 @@
-import "./registerForm.css";  
+import "./RegisterForm.css";  
 import Input from "../ui/input/Input";
 import Button from "../ui/button/Button";
 import { useState } from "react";

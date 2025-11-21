@@ -2,16 +2,12 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-COPY package.json package-lock.json ./
+COPY frontend-fitclass/package*.json ./
 
 RUN npm install
 
-COPY . .
+COPY frontend-fitclass .
 
-RUN npm run build
+EXPOSE 5173
 
-FROM nginx:stable-alpine AS production
-
-COPY --from=builder /app/build /usr/share/nginx/html
-
-EXPOSE 80
+CMD [ "npm", "run", "dev" , "--", "--host=0.0.0.0"]
