@@ -32,7 +32,6 @@ function Card({title, time, duration, trainer, gym, vacancy, vacancyLimit}: Card
             <div>
                 <Button title="Reservar Vaga"/>
             </div>
-
         </div>
     )
 }

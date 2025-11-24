@@ -1,0 +1,25 @@
+.AddressForm{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width:36rem;
+}
+
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.label{
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    margin: 0;
+    padding-left: 0.4rem;
+}
+
+.buttonContainer{
+    margin-top: 0.4rem;
+    width: 100%;
+}
