@@ -9,6 +9,32 @@ export default function CreateClass() {
   const [vacancy, setVacancy] = useState("");
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
+  // const [error, setError] = useState("");
+
+  // const handleCreateClass = () => {
+  //   if (!academia || !category || !vacancy || !start || !end) {
+  //     alert("Preencha todos os campos.");
+  //     return;
+  //   }
+
+  //   try {
+  //     setError("");
+  //     await apiFetch("/classes", {
+  //       method: "POST",
+  //       body: JSON.stringify({
+          
+  //       }),
+  //     });
+
+  //     window.location.href = "/classes";
+  //   } catch (error: unknown) {
+  //     if (error instanceof Error) {
+  //       setError(error.message);
+  //     } else {
+  //       setError("Erro desconhecido!");
+  //     }
+  //   }
+  // };
 
   return (
     <div className="createClassMain">
@@ -33,7 +59,9 @@ export default function CreateClass() {
         </div>
 
         <div className="createContainer">
-          <label className="createLabel" htmlFor="category">Categoria</label>
+          <label className="createLabel" htmlFor="category">
+            Categoria
+          </label>
           <InputAlt
             type="text"
             placeholder="Categoria da aula"
@@ -44,19 +72,19 @@ export default function CreateClass() {
         </div>
 
         <div className="createContainer">
-            <label htmlFor="vacancy">Limite de pessoas</label>
-            <InputAlt 
-              type="text"
-              placeholder="- 30 + "
-              value={vacancy}
-              onChange={(e) => setVacancy(e.target.value)}
-              id="vacancy"
-            />
+          <label htmlFor="vacancy">Limite de pessoas</label>
+          <InputAlt
+            type="text"
+            placeholder="- 30 + "
+            value={vacancy}
+            onChange={(e) => setVacancy(e.target.value)}
+            id="vacancy"
+          />
         </div>
 
         <div className="createContainer">
           <label htmlFor="start">Hora Inicio</label>
-          <InputAlt 
+          <InputAlt
             type="text"
             placeholder="00:00"
             value={start}
@@ -65,10 +93,9 @@ export default function CreateClass() {
           />
         </div>
 
-        
         <div className="createContainer">
           <label htmlFor="end">Hora Inicio</label>
-          <InputAlt 
+          <InputAlt
             type="text"
             placeholder="00:00"
             value={end}
@@ -77,10 +104,7 @@ export default function CreateClass() {
           />
         </div>
 
-        <Button 
-          title="Criar Aula"
-        />
-
+        <Button title="Criar Aula" />
       </form>
     </div>
   );
