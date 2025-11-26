@@ -1,0 +1,11 @@
+.dateHeaderMain{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: solid;
+    border-radius: 5vh;
+    border-color: #C6FC03;
+    color: gainsboro;
+    width: 40vh;
+    padding: 0.5vh;
+}

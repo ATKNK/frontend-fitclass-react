@@ -6,6 +6,8 @@ import Register from './pages/Register/Register';
 import Profile from './pages/profile/Profile';
 import Navbar from './components/navbar/Navbar'
 import Reservations from './pages/Reservations/Reservations';
+import Classes from './pages/Classes/Classes';
+import Academias from './pages/Academias/Academias';
 
 function AppContent() {
 
@@ -26,6 +28,8 @@ return (
         <Route path="/home" element={<Home />}/>
         <Route path="/register" element={<Register />}/>
         <Route path="/reservations" element={<Reservations/>}/>
+        <Route path="/classes" element={<Classes/>}/>
+        <Route path="/gyms" element={<Academias/>}/>
       </Routes>
     </div>
   );

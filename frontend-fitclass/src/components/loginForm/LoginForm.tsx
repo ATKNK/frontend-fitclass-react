@@ -3,7 +3,7 @@ import { saveToken } from "../../utils/api/auth";
 import { apiFetch } from "../../utils/api/api";
 import Input from "../ui/input/Input";
 import Button from "../ui/button/Button";
-import "./loginForm.css";
+import "./LoginForm.css";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");

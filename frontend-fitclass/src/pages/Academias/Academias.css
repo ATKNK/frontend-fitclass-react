@@ -1,0 +1,57 @@
+.academiasMain{
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 20%;
+    background-color: #262626;
+    font-family: system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    gap: 3vh;
+    box-sizing: border-box;
+}
+
+.academiasTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    font-weight: bold;
+    margin-top: 0;
+    padding-top: 0;
+    color: #ffffff;
+}
+
+.academiasTitle span{
+    color: #C6FC03;
+}
+
+.academiasBuscar{
+    border: solid;
+    border-color: #C6FC03;
+    border-width: 2px;
+    border-radius: 5vh;
+    padding: 1vh;
+    width: 40vh;
+    color: gainsboro;
+    background-color: #262626;
+}
+
+.academiasMap{
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 5vh;
+}
+
+.academiasMapImg{
+    width: 90%;
+    border-radius: 2vh;
+}
+
+.academiasLabel{
+    color: gainsboro;
+    font-weight: bold;
+}

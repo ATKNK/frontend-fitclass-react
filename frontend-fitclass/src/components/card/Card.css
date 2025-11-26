@@ -42,4 +42,10 @@
 
 .cardInfo{
     color: gainsboro;
+    margin: 1vh;
+}
+
+.cardProximasAulas{
+    color: gainsboro;
+    margin: 1vh;
 }

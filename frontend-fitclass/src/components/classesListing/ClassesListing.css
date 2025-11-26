@@ -1,0 +1,22 @@
+.classesListingMain{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: solid;
+    border-color: #C6FC03;
+    border-radius: 2vh;
+}
+
+.classesListingClass{
+    color: gainsboro;
+    font-weight: bold;
+    font-size: large;
+}
+
+.classListingTime{
+    color: grey;
+}
+
+.classListingDate{
+    color: gainsboro
+}
