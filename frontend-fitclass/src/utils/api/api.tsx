@@ -8,7 +8,7 @@ export async function apiFetch<T = unknown>(
 ): Promise<T> {
   const token = getToken();
 
-  const publicRoutes = ["/auth/login", "/auth/register"];
+  const publicRoutes = ["/auth/login", "/gym-owner"];
 
   const shouldSendToken = token && !publicRoutes.includes(endpoint);
 
