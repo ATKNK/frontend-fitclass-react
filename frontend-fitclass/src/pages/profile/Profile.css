@@ -75,3 +75,9 @@
     width: 100%;
     bottom: 0;
 }
+
+.inputContainerAlt {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
