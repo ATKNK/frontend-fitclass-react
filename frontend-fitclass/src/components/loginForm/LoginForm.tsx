@@ -1,9 +1,17 @@
 import { useState } from "react";
-import { saveToken } from "../../utils/api/auth";
+import { saveRole, saveToken } from "../../utils/api/auth";
 import { apiFetch } from "../../utils/api/api";
 import Input from "../ui/input/Input";
 import Button from "../ui/button/Button";
 import "./LoginForm.css";
+
+type LoginResponse = {
+  token: string;
+  user: {
+    name: string;
+    role: string;
+  };
+};
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -13,12 +21,13 @@ export default function LoginForm() {
   const handleLogin = async () => {
     try {
       setError("");
-      const data = await apiFetch<{ token: string }>("/auth/login", {
+      const data = await apiFetch<LoginResponse>("/auth/login", {
         method: "POST",
         body: JSON.stringify({ email, password }),
       });
 
       saveToken(data.token);
+      saveRole(data.user.role);
       window.location.href = "/home";
     } catch (err: unknown) {
       if (err instanceof Error) {

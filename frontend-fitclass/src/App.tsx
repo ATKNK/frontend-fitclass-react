@@ -9,6 +9,7 @@ import Reservations from './pages/Reservations/Reservations';
 import Classes from './pages/Classes/Classes';
 import Academias from './pages/Academias/Academias';
 import Manage from './pages/Manage/Manage';
+import PrivateRoute from './utils/api/PrivateRoute';
 
 function AppContent() {
 
@@ -25,13 +26,13 @@ return (
       )}
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path='/profile' element={<Profile/>}/>
-        <Route path="/home" element={<Home />}/>
+        <Route path='/profile' element={<PrivateRoute><Profile/></PrivateRoute>}/>
+        <Route path="/home" element={<PrivateRoute><Home /></PrivateRoute>}/>
         <Route path="/register" element={<Register />}/>
-        <Route path="/reservations" element={<Reservations/>}/>
-        <Route path="/classes" element={<Classes/>}/>
-        <Route path="/gyms" element={<Academias/>}/>
-        <Route path="/manage" element={<Manage/>}/>
+        <Route path="/reservations" element={<PrivateRoute><Reservations/></PrivateRoute>}/>
+        <Route path="/classes" element={<PrivateRoute><Classes/></PrivateRoute>}/>
+        <Route path="/gyms" element={<PrivateRoute><Academias/></PrivateRoute>}/>
+        <Route path="/manage" element={<PrivateRoute allowedRoles={["GYM_OWNER", "PERSONAL"]}><Manage/></PrivateRoute>}/>
       </Routes>
     </div>
   );
