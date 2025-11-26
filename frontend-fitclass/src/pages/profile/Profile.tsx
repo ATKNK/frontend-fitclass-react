@@ -1,12 +1,28 @@
 import Button from "../../components/ui/button/Button";
+import { useEffect } from "react";
+import { isAuthenticated, removeToken } from "../../utils/api/auth";
+import { useNavigate } from "react-router-dom";
 import "./Profile.css";
 
 function Profile() {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!isAuthenticated()) {
+            navigate("/login");
+        }
+    }, [navigate]);
+
+    const handleLogout = () => {
+        removeToken();
+        navigate("/login");
+    };
+
     return (<div className="profileMain">
         <div className="title">
             <p className="meu">Meu</p><p className="perfil">Perfil</p>
         </div>
-
+        <Button title="Sair" onClick={handleLogout} />
         <div className="buttons">
             <Button title="Editar Dados" />
             <Button title="Redefinir Senha" />
@@ -29,7 +45,10 @@ function Profile() {
         <div className="lowerButtons">
             <Button title="Fale Conosco" />
             <Button title="Excluir Conta" />
+
         </div>
+
+
     </div>
     );
 }

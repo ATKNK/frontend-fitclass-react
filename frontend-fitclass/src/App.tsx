@@ -8,6 +8,7 @@ import Navbar from './components/navbar/Navbar'
 import Reservations from './pages/Reservations/Reservations';
 import Classes from './pages/Classes/Classes';
 import Academias from './pages/Academias/Academias';
+import Manage from './pages/Manage/Manage';
 
 function AppContent() {
 
@@ -30,6 +31,7 @@ return (
         <Route path="/reservations" element={<Reservations/>}/>
         <Route path="/classes" element={<Classes/>}/>
         <Route path="/gyms" element={<Academias/>}/>
+        <Route path="/manage" element={<Manage/>}/>
       </Routes>
     </div>
   );
